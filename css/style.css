@@ -456,8 +456,8 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  /* display: block;  remove extra space below image */
+    /*  position: relative;
+  display: block;  remove extra space below image */
 }
 
 .progress-head {
