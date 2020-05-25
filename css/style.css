@@ -476,7 +476,26 @@ header {
   display: block;  remove extra space below image */
 }
 
+.blog-img
+ {
+  height: 400px;
+  width: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block; 
+  /*margin-left: 20px */
+}
 
+.blog-banner-img
+ {
+  height: 400px;
+  width: 1200px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block; 
+  margin-bottom: 20px
+}
 .progress-head {
   font-size: 22px; }
 
