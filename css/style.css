@@ -1306,7 +1306,8 @@ input[type="text"] {
 #footer {
   padding: 8em 0;
   display: block;
-  width: 100%; }
+  width: 100%;
+  background-color: white}
   #footer h2 {
     color: #000;
     letter-spacing: 1px;

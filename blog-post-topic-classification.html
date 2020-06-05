@@ -25,7 +25,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Karla:400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700" rel="stylesheet">
-	
+
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -95,7 +95,7 @@
 			</div>
 		</div>
 	</nav>
-	
+
 	<div id="colorlib-page">
 		<header>
 			<div class="container">
@@ -130,8 +130,8 @@
 				<div class="row">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="work-entry animate-box">
-								<p> To keep up with innovations in research fields, literature review is often performed. The analysis and coding of papers done during literature reviews can be quite tasking, especially when the number of papers to be evaluated is large. A possible alternative to help reduce the effort required is to use NLP topic modelling techniques. Topic modelling involves extracting the most representative topics occurring in a collection of documents and grouping the documents under a topic; similar to the process done manually by researchers when conducting literature reviews. 
-								<p>There are several topic modelling techniques, such as LDA, LSA, and NMF. I had previously conducted an experiment to find out the topic model with the best performance, it turned out to be NMF. In this blog post i am going to show how i use NMF to automatically classify research papers under their respective topics. The full code can be found <a href="https://github.com/Leah-u/Automatic-Topic-Classification-Using-NLP-Topic-Models/blob/master/Research%20Paper%20Topic%20Classification%20using%20the%20NLP%20Topic%20Model%20NMF/Code/nmf_topic_model.ipynb">here</a>. You can read more about NMF <a href="https://en.wikipedia.org/w/index.php?title=Non-negative_matrix_factorization&oldid=950191097">here </a>. I followed the following steps outlined below:</p>	
+								<p> To keep up with innovations in research fields, literature review is often performed. The analysis and coding of papers done during literature reviews can be quite tasking, especially when the number of papers to be evaluated is large. A possible alternative to help reduce the effort required is to use NLP topic modelling techniques. Topic modelling involves extracting the most representative topics occurring in a collection of documents and grouping the documents under a topic; similar to the process done manually by researchers when conducting literature reviews.
+								<p>There are several topic modelling techniques, such as LDA, LSA, and NMF. I had previously conducted an experiment to find out the topic model with the best performance, it turned out to be NMF. In this blog post i am going to show how i use NMF to automatically classify research papers under their respective topics. The full code can be found <a href="https://github.com/Leah-u/Automatic-Topic-Classification-Using-NLP-Topic-Models/blob/master/Research%20Paper%20Topic%20Classification%20using%20the%20NLP%20Topic%20Model%20NMF/Code/nmf_topic_model.ipynb">here</a>. You can read more about NMF <a href="https://en.wikipedia.org/w/index.php?title=Non-negative_matrix_factorization&oldid=950191097">here </a>. I followed the following steps outlined below:</p>
 							<a href="blog-post-topic-classification.html" class="blog-banner-img" style=" background-image: url(images/overview.png);"></a>
 								<h2>1. Import Libraries</h2>
 									<p> First thing i did was to import all the necessary libraries which will be used in this project. Most of the libraries were from 'nltk'. </p>
@@ -149,7 +149,7 @@
 									<h2>5. Create Bigrams and Trigrams</h2>
 									<p> Additionally, as there were some words that frequently occurred together, i decided to use them to to create bigrams and trigrams. Bigrams and Trigrams are two or three words frequently occurring together in a document. Some examples in my corpus include: ‘visually impaired’, ‘programming language’, ‘block based programming’, 'screen reader', 'computer science' etc. </p>
 									<p> I used Gensim’s Phrases model to build and implement the bigrams and trigrams. The two important arguments to Phrases are min_count and threshold. The higher the values of these param, the harder it is for words to be combined to bigrams. After creating the bigrams and trigrams, i combined the tokens back into sentences and assigned the de-tokenized text to a new column in my dataframe called 'clean_text'.</p>
-									 <img class="img-responsive" src="images/bigrams-trigrams.png" alt="html5 bootstrap template by colorlib.com"><br>	
+									 <img class="img-responsive" src="images/bigrams-trigrams.png" alt="html5 bootstrap template by colorlib.com"><br>
 					                <h2>6. Perform Exploratory Analysis </h2>
 									<p>To verify whether the preprocessing happened correctly, we’ll make a word cloud using the WordCloud package. This will give a visual representation of most common words. It is key to understanding the data and ensuring we are on the right track, and if any more preprocessing is necessary before applying the topic model.</p>
 					                <img class="img-responsive" src="images/explore-data.png" alt="explore data"><br>
@@ -173,7 +173,7 @@
 									<img class="img-responsive" src="images/classify-paper.png" alt="classify topic"><br>
 									<p> I show the topic classification of the first 10 papers in my corpus below. As we can see the first paper was categorized under 'Topic 4'. From the title and text of the paper we can see that the paper is about block-based programming, looking at the previous table showing each of the 10 topics we can see that 'Topic 4' is about designing a block-based programming environment. This means that the paper was rightly classified by the NMF model. The same can be seen in the classification of other papers in the dataset. </P>
 						            <img class="img-responsive" src="images/result.png" alt="classify topic"><br>
-						
+
 						</div>
 					</div>
 				</div>
@@ -184,14 +184,14 @@
 			<div id="footer">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-4 col-pb-sm">
+						<div class="col-md-6 col-pb-sm">
 							<div class="row">
 								<div class="col-md-10">
 									<h2>Let's Talk</h2>
 									<p> Feel free to reach out to me through email or connect with me on socials.</p>
 									<p><a href="mailto:obianujuokafor@my.unt.edu">obianujuokafor@my.unt.edu</a></p>
 								<p class="colorlib-social-icons">
-									<a href="https://www.facebook.com/uju.b.okafor"><i class="icon-facebook4"></i></a>
+									<a href="https://www.facebook.com/uju.c.okafor"><i class="icon-facebook4"></i></a>
 									<a href="https://twitter.com/ujunwa__?lang=en"><i class="icon-twitter3"></i></a>
 									<a href="https://www.instagram.com/leah_uu/?hl=en"><i class="icon-instagram2"></i></a>
 									<a href="https://github.com/Leah-u"><i class="icon-github"></i></a>
@@ -200,17 +200,17 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-4 col-pb-sm">
+						<div class="col-md-6 col-pb-sm">
 							<h2>Latest Blog</h2>
 							<div class="f-entry">
-								<a href="blog-post-How-to-host-your-website-on-github-for-free.html" class="featured-img" style="background-image: url(images/github-7.jpg);"></a>
+								<a href="blog-post-topic-classification.html" class="featured-img" style="background-image: url(images/github-7.jpg);"></a>
 								<div class="desc">
 									<span>May 25th, 2020</span>
-									<h3><a href="blog-post-How-to-host-your-website-on-github-for-free.html">Automatic topic classification of research papers using NLP topic models</a></h3>
+									<h3><a href="blog-post-topic-classification.html">Automatic topic classification of research papers using NLP topic models</a></h3>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-4 col-pb-sm">
+					<!--	<div class="col-md-4 col-pb-sm">
 							<h2>Newsletter</h2>
 							<p>Sign up for my newsletter!</p>
 							<div class="subscribe text-center">
@@ -225,15 +225,15 @@
 						<div class="col-md-12 text-center">
 							<p>
 								&copy; <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template from <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!--Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template from <a href="https://colorlib.com" target="_blank">Colorlib</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-							</p>
+						<!--	</p>
 						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</footer>
-	
+
 	</div>
 
 	<!-- jQuery -->
@@ -255,4 +255,3 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
 	</body>
 </html>
-
