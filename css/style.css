@@ -7,7 +7,7 @@
 
 /* =======================================================
 *
-* 	Template Style 
+* 	Template Style
 *	Edit this section
 *
 * ======================================================= */
@@ -483,7 +483,7 @@ header {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  display: block; 
+  display: block;
   /*margin-left: 20px */
 }
 
@@ -493,7 +493,7 @@ header {
   width: 1200px;
   background-repeat: no-repeat;
   background-size: contain;
-  display: block; 
+  display: block;
   margin-bottom: 20px
 }
 .progress-head {
@@ -635,64 +635,64 @@ header {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(150deg);
-    transform: rotate(150deg); } }
+    -webkit-transform: rotate(144deg);
+    transform: rotate(144deg); } }
 
 @keyframes loading-2 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(150deg);
-    transform: rotate(150deg); } }
+    -webkit-transform: rotate(144deg);
+    transform: rotate(144deg); } }
 
 @-webkit-keyframes loading-3 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg); } }
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); } }
 
 @keyframes loading-3 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(135deg);
-    transform: rotate(135deg); } }
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg); } }
 
 @-webkit-keyframes loading-4 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg); } }
+    -webkit-transform: rotate(108deg);
+    transform: rotate(108deg); } }
 
 @keyframes loading-4 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(90deg);
-    transform: rotate(90deg); } }
+    -webkit-transform: rotate(108deg);
+    transform: rotate(108deg); } }
 
 @-webkit-keyframes loading-5 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(125deg);
-    transform: rotate(125deg); } }
+    -webkit-transform: rotate(72deg);
+    transform: rotate(72deg); } }
 
 @keyframes loading-5 {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg); }
   100% {
-    -webkit-transform: rotate(125deg);
-    transform: rotate(125deg); } }
+    -webkit-transform: rotate(72deg);
+    transform: rotate(72deg); } }
 
 @media only screen and (max-width: 990px) {
   .progress {
