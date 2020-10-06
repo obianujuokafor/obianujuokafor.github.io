@@ -117,7 +117,7 @@
 				<div class="row">
 					<div class="col-md-10 col-md-offset-1 text-center animate-box intro-heading">
 						<span>Blog post</span>
-						<h2>Automatic topic classification of research papers using the NLP topic model NMF</h2>
+						<h2>How to parse your resume to create a word cloud for your Linkedin header</h2>
 					</div>
 				</div>
 				<div class="row">
@@ -130,49 +130,30 @@
 				<div class="row">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="work-entry animate-box">
-								<p> To keep up with innovations in research fields, literature review is often performed. The analysis and coding of papers done during literature reviews can be quite tasking, especially when the number of papers to be evaluated is large. A possible alternative to help reduce the effort required is to use NLP topic modelling techniques. Topic modelling involves extracting the most representative topics occurring in a collection of documents and grouping the documents under a topic; similar to the process done manually by researchers when conducting literature reviews.
-								<p>There are several topic modelling techniques, such as LDA, LSA, and NMF. I had previously conducted an experiment to find out the topic model with the best performance, it turned out to be NMF. In this blog post i am going to show how i use NMF to automatically classify research papers under their respective topics. The full code can be found <a href="https://github.com/Leah-u/Automatic-Topic-Classification-Using-NLP-Topic-Models/blob/master/Research%20Paper%20Topic%20Classification%20using%20the%20NLP%20Topic%20Model%20NMF/Code/nmf_topic_model.ipynb">here</a>. You can read more about NMF <a href="https://en.wikipedia.org/w/index.php?title=Non-negative_matrix_factorization&oldid=950191097">here </a>. I followed the following steps outlined below:</p>
-							<a href="blog-post-topic-classification.html" class="blog-banner-img" style=" background-image: url(images/overview.png);"></a>
+								<p> A good way to stand out on Linkedin is to use a distinctive header. An option is to extract the most salient skills from you resume and use it to populate a word cloud, which you can then use as a header. In this medium article I give step by step details on how you can accomplish this. </p>
+								<p>I have broken the process down into five easy steps outlined below. You can find all the code files<a href="https://github.com/Leah-u/Resume-Parser">here</a>.</p>
+							<a href="blog-post-topic-classification.html" class="blog-banner-img" style=" background-image: url(images/header2.png);"></a>
 								<h2>1. Import Libraries</h2>
-									<p> First thing i did was to import all the necessary libraries which will be used in this project. Most of the libraries were from 'nltk'. </p>
+									<p> First thing i did was to import all the necessary libraries which will be used in this project.</p>
 									<img class="img-responsive" src="images/import-libraries.png" alt="import libraries"><br>
-									<h2>2. Load the data </h2>
-									<p> The selected research papers data had been entered into an excel file 'research_papers.csv', with columns for 'ID', 'Author', 'Title', 'Year', 'Conference/Journal', 'Introduction', 'Conclusion'. I loaded the excel file into a dataframe called 'dataset'.</p>
-                                    <img class="img-responsive" src="images/load-data.png" alt="load data"><br>
-									<h2>3. Clean Data </h2>
-									<p>Before proceeding, i had to clean up the data. I dropped the unnecessary columns like 'ID', 'Author','Year', 'Conference/Journal'. For papers with no conclusions, I filled the empty cell with the text "No conclusion". Next, I merged the two columns 'Abstract' and 'Conclusion' to form a new column called 'PaperText'. The text in this new column is what i would be working on in this experiment.</p>
+									<h2>2. Parse Resume</h2>
+									<p> The next step is to parse the desired resume. To do this, I created a resume_parser() function that uses the PDFResourceManager, PDFPageInterpreter, LAParams, TextConverter from the pdfminer library to extract and return all the text from my resume.</p>
+                  <img class="img-responsive" src="images/load-data.png" alt="load data"><br>
+									<h2>3. Extract Skills </h2>
+									<p>The next step is to extract the most relevant skills from the resume text. How do we know the vital skills to extract? This is done in the extract_skills() function. In this function, I first preprocess the parsed resume text by removing punctuations, converting to lowercase, tokenizing, lemmatizing, and lastly removing stopwords.</p>
+									<p> After, each of the preprocessed tokens is compared to a set of skills stored in a a csv file 'skills.csv'. This csv file is a compilation of all relevant skills for different career types e.g software engineering, accounting, data analytics etc. After the comparison is done, I add the skills that were a match to an array called relevant skills. Finally the array of relevant skills is returned.</p>
 									<img class="img-responsive" src="images/clean-data.png" alt="clean data"><br>
-									<img class="img-responsive" src="images/data-table.png" alt="clean data"><br>
-									<h2>4. Preprocess Data</h2>
-									<p>Another important step was to preprocess the data. First, i tokenized each sentence into a list of words, then i removed punctuations, stopwords and words of length less than 3. Lastly, i lemmatized each token.</p>
+									<h2>4. Create word cloud</h2>
+									<p>We use the skills in the relevant_skills array to create and generate a word cloud.</p>
 									<img class="img-responsive" src="images/preprocess-data.png" alt="preprocess data"><br>
-									<h2>5. Create Bigrams and Trigrams</h2>
-									<p> Additionally, as there were some words that frequently occurred together, i decided to use them to to create bigrams and trigrams. Bigrams and Trigrams are two or three words frequently occurring together in a document. Some examples in my corpus include: ‘visually impaired’, ‘programming language’, ‘block based programming’, 'screen reader', 'computer science' etc. </p>
-									<p> I used Gensim’s Phrases model to build and implement the bigrams and trigrams. The two important arguments to Phrases are min_count and threshold. The higher the values of these param, the harder it is for words to be combined to bigrams. After creating the bigrams and trigrams, i combined the tokens back into sentences and assigned the de-tokenized text to a new column in my dataframe called 'clean_text'.</p>
+									<h2>5. Edit the word cloud shape to match your Linkedin header</h2>
+									<p>I took it a step further and modified the shape of the word cloud to fit the design of Linkedin headers. Part of the Linkedin header is covered by your profile picture, therefore to prevent important skills from being hidden by your profile picture, I decided to create a world cloud that takes into account the position profile pictures on the header. </p>
+									<p> I did this by creating a Linkedin header design template using the application Gimp.</p>
 									 <img class="img-responsive" src="images/bigrams-trigrams.png" alt="html5 bootstrap template by colorlib.com"><br>
-					                <h2>6. Perform Exploratory Analysis </h2>
-									<p>To verify whether the preprocessing happened correctly, we’ll make a word cloud using the WordCloud package. This will give a visual representation of most common words. It is key to understanding the data and ensuring we are on the right track, and if any more preprocessing is necessary before applying the topic model.</p>
-					                <img class="img-responsive" src="images/explore-data.png" alt="explore data"><br>
-					                <p> We can see that the most common words are the words, code, blind, tool, design, programming, accessibility, visual etc. </p>
-					                <img class="img-responsive" src="images/word-cloud-1.png" alt="explore data"><br>
-									<h2>7. Create Document-Term Matrix </h2>
-									<p>This is the first step towards topic modeling. Each and every term and document in the corpus needs to be represented as a vector. We will use sklearn's TfidfVectorizer to create a document-term matrix using only 1000 terms (words) from our corpus. I could have used all the terms in my corpus to create this matrix but that would require a lot of computation.</p>
-									<img class="img-responsive" src="images/docu-term-matrix.png" alt="html5 bootstrap template by colorlib.com"><br>
-									<h2>8. Generate topics using Topic Model </h2>
-					                <p> The generated document-term matrix will be decomposed into multiple matrices. We will use sklearn's decomposition model NMF to perform the task of matrix decomposition. The number of topics to be generated can be specified by using the n_components parameter. The resulting matrices derived after running the topic model are the document-topic matrix and term-topic matrix. In the term-topic matrix, sorting the rows in reverse, reveals the top terms for each topic. </p>
-									<img class="img-responsive" src="images/apply-topic-model.png" alt="generate topic"><br>
-									<p> I display the 10 topics and their top 10 terms. From the top 10 terms, you can infer what a topic is about, for example looking at 'Topic #05', we can tell it is about the 'challenges blind developers face in software development environments'. Each paper in the corpus falls under one of these topics. We will use the generated topics to classify every paper in the dataset later.</p>
-									<img class="img-responsive" src="images/model-result.png" alt="view model result"><br>
-									<h2>9. Analyzing our NMF model </h2>
-									<p> To analyze the model, we visualize the topics for interpretability. To do so, we’ll use a popular visualization package, pyLDAvis which generates an inter-topic distance map. This map is designed to help in the understanding and interpreting of individual topics, and understanding the relationships between the topics. </p>
-									<img class="img-responsive" src="images/analyze-model.png" alt="analyze model"><br>
-									<p> The graph below is the generated Inter-topic Distance Plot. The closer the distance between topics and the more the overlap between topics the worse the performance of the model. Looking at the plot below we can see that for the most part NMF produced topics that had good distance and few overlaps, this means that NMF produces distinctive topics.</p>
-									<img class="img-responsive" src="images/topic-distance.png" alt="analyze model"><br>
-									<h2>10. Classify papers under topics</h2>
-									<p> Lastly, i use the 10 topics generated by the NMF model to categorize each paper in my dataset. </p>
-									<img class="img-responsive" src="images/classify-paper.png" alt="classify topic"><br>
-									<p> I show the topic classification of the first 10 papers in my corpus below. As we can see the first paper was categorized under 'Topic 4'. From the title and text of the paper we can see that the paper is about block-based programming, looking at the previous table showing each of the 10 topics we can see that 'Topic 4' is about designing a block-based programming environment. This means that the paper was rightly classified by the NMF model. The same can be seen in the classification of other papers in the dataset. </P>
-						            <img class="img-responsive" src="images/result.png" alt="classify topic"><br>
+									<p>Next, I created a mask of this template and used this mask to generate a word cloud. I saved the generated word cloud as an image and used this as my Linkedin header.</p>
+					        <img class="img-responsive" src="images/explore-data.png" alt="explore data"><br>
+					         <p>The generated image is shown below.</p>
+					         <img class="img-responsive" src="images/word-cloud-1.png" alt="explore data"><br>
 
 						</div>
 					</div>
