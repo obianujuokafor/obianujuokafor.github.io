@@ -421,6 +421,11 @@ header {
 
 .about-img{
 	margin-top: 100px;
+  height: 400px;
+  width: 400px;
+  /*background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;*/
 }
 .bold {
   position: absolute;
@@ -459,7 +464,7 @@ header {
   width: 600px;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   margin-top: 100px
   /* position: relative;
   display: block;  remove extra space below image */
