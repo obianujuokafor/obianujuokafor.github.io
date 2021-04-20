@@ -17,7 +17,7 @@ body {
   font-size: 16px;
   font-weight: 400;
   background: #fafafa;
-  color: gray; }
+   }
   body.menu-show {
     overflow: hidden;
     position: fixed;
