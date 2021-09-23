@@ -339,25 +339,6 @@ she possesses, which puts her well beyond being only one of the best machine lea
 				</div>
 			</div>
 		</div>
-		<div class="chat-container" id = "chat-container"></div>
-   <button class="chat-button" id="chat-button"><i class="fas fa-comment-alt fa-lg"></i></button>
-	 <script type="text/javascript">
-			 var chatroom = new window.Chatroom({
-				 host: "https://chatbot-marty.herokuapp.com",
-				 title: "Chat with Marty",
-				 container: document.querySelector(".chat-container"),
-				 welcomeMessage: "Hi, I am Marty. How may I help you?",
-				 speechRecognition: "en-US",
-				 voiceLang: "en-US"
-			 });
-			 //chatroom.openChat();
-		 </script>
-		<script>
-		     $('.chat-button').click(function() {
-		         chatroom.ref.handleToggleChat();
-		         $(this).find('i').toggleClass('fas fa-times fa-lg fas fa-comment-alt fa-lg');
-		});
-		</script>
 		<footer>
 			<div id="footer">
 				<div class="container">
