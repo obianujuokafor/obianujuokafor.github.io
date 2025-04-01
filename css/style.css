@@ -1277,6 +1277,25 @@ header {
     .contact-info li a {
       color: #95e9df; }
 
+.card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .card-img-top {
+        width: 100%;
+        height: 250px; /* Adjust based on preference */
+        object-fit: cover; /* Ensures the images maintain their aspect ratio */
+    }
+    
+    .card-body {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
 .form-control {
   -webkit-box-shadow: none;
   -moz-box-shadow: none;
